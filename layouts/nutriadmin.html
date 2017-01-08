@@ -1,0 +1,519 @@
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="utf-8">
+		<title>NutriAdmin</title>
+
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- page specific plugin styles -->
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="/css/fonts.googleapis.com.css">
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style">
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="/css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+		<link rel="stylesheet" href="/css/ace-skins.min.css">
+		<link rel="stylesheet" href="/css/ace-rtl.min.css">
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="/js/ace-extra.min.js"></script><style>@keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-moz-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-webkit-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-ms-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-o-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}.ace-save-state{animation-duration:10ms;-o-animation-duration:10ms;-ms-animation-duration:10ms;-moz-animation-duration:10ms;-webkit-animation-duration:10ms;animation-delay:0s;-o-animation-delay:0s;-ms-animation-delay:0s;-moz-animation-delay:0s;-webkit-animation-delay:0s;animation-name:nodeInserted;-o-animation-name:nodeInserted;-ms-animation-name:nodeInserted;-moz-animation-name:nodeInserted;-webkit-animation-name:nodeInserted}</style>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="/js/html5shiv.min.js"></script>
+		<script src="/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							Ace Admin
+						</small>
+					</a>
+				</div>
+
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						
+
+						
+
+						
+
+						<li class="light-blue dropdown-modal">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="/images/avatars/user.jpg" alt="Jason's Photo">
+								<span class="user-info">
+									<small>Welcome,</small>
+									Jason
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-cog"></i>
+										Settings
+									</a>
+								</li>
+
+								<li>
+									<a href="profile.html">
+										<i class="ace-icon fa fa-user"></i>
+										Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<div class="main-container ace-save-state" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.loadState('main-container')}catch(e){}
+			</script>
+
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+				<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+				<!-- /.sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="index.html">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Dashboard </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					
+
+					
+
+					
+
+					<li class="">
+						<a href="widgets.html">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text"> Widgets </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					
+
+					
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-tag"></i>
+							<span class="menu-text"> More Pages </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="profile.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									User Profile
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="inbox.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Inbox
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="pricing.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Pricing Tables
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="invoice.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Invoice
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="timeline.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Timeline
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="search.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Search Results
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="email.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Email Templates
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="login.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Login &amp; Register
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					
+				</ul><!-- /.nav-list -->
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-save-state fa-angle-double-left ace-icon fa" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>
+
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="#">Home</a>
+							</li>
+
+							<li>
+								<a href="#">Other Pages</a>
+							</li>
+							<li class="active">Blank Page</li>
+						</ul><!-- /.breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- /.nav-search -->
+					</div>
+
+					<div class="page-content">
+						<div class="page-header">
+							<h1>
+								NUEVO PACIENTE
+							</h1>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+						
+						<div class="row">
+							<form>
+							<div class="col-xs-12">
+								<div class="input-group input-group-sm">
+									<span class="input-group-addon">Nombre</span>
+									<input type="text" class="form-control search-query" placeholder="Nombre">
+									<span class="input-group-addon">Residencia</span>
+									<input type="text" class="form-control search-query" placeholder="Residencia">
+									<span class="input-group-addon">Numero</span>
+									<input type="text" class="form-control search-query" placeholder="(333) 333 3333">
+								</div>
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+
+						<div class="space-6"></div>
+
+
+						<div class="row">
+						
+							<div class="col-sm-6">
+								<h3 class="header smaller lighter">Alergias</h3>		
+								<h4 class="smaller lighter">Alimentos</h4>		
+								<textarea class="form-control" id="form-field-6"></textarea>
+
+								<h4 class="smaller lighter">Medicamentos</h4>		
+								<textarea class="form-control" id="form-field-6"></textarea>
+
+							</div><!-- col -->
+							<div class="col-sm-6">
+										<h3 class="header smaller lighter">Datos Clinicos</h3>
+										<div class="input-group input-group-sm">
+											<span class="input-group-addon">Diagnostico</span>
+											<input type="text" class="form-control">
+										</div>
+										<div class="input-group input-group-sm">
+											<span class="input-group-addon">Edad</span>
+											<input type="text" class="form-control">
+										</div>
+										<div class="input-group input-group-sm">
+											<span class="input-group-addon">Talla</span>
+											<input type="text" class="form-control">
+										</div>
+										<div class="input-group input-group-sm">
+											<span class="input-group-addon">Complexion</span>
+											<input type="text" class="form-control">
+										</div>
+										<div class="input-group input-group-sm">
+											<span class="input-group-addon">Peso Ideal</span>
+											<input type="text" class="form-control">
+										</div>
+								</div>
+							</div><!-- col -->
+						</div><!-- row -->
+						<div class="space-6"></div>
+							
+						<div class="row">
+							<div class="col-xs-12"> 
+								<h3 class="header smaller lighter">Antecedentes</h3>		
+							</div>
+						</div><!-- row-->
+
+						<div class="space-6"></div>
+
+						<div class="row">
+							<div class="col-xs-3">
+								<div>
+									<h4 class="smaller lighter">HF</h2>
+								</div>
+								<div class="control-group">
+									<div class="checkbox">
+										<label>
+											<input name="form-field-checkbox" type="checkbox" class="ace">
+											<span class="lbl"> diabetes</span>
+										</label>
+									</div>
+
+									<div class="checkbox">
+										<label>
+											<input name="form-field-checkbox" type="checkbox" class="ace">
+											<span class="lbl"> Hipertension</span>
+										</label>
+									</div>
+
+									<div class="checkbox">
+										<label>
+											<input name="form-field-checkbox" type="checkbox" class="ace">
+											<span class="lbl"> Cancer</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-xs-3">
+								<div>
+									<h4 class="smaller lighter">Patologias</h2>
+								</div>
+								
+								<textarea class="form-control" id="form-field-3"></textarea>
+							</div>
+
+							<div class="col-xs-3">
+								<div>
+									<h4 class="smaller lighter">Nutricionales</h2>
+								</div>
+								<div class="control-group">
+									<div class="checkbox">
+										<label>
+											<input name="form-field-checkbox" type="checkbox" class="ace">
+											<span class="lbl"> Anemias</span>
+										</label>
+									</div>
+
+									<div class="checkbox">
+										<label>
+											<input name="form-field-checkbox" type="checkbox" class="ace">
+											<span class="lbl"> Bajo Peso / DN</span>
+										</label>
+									</div>
+
+									<div class="checkbox">
+										<label>
+											<input name="form-field-checkbox" type="checkbox" class="ace">
+											<span class="lbl"> Sob / oB</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<div>
+									<h4 class="smaller lighter">No Patalogicos</h2>
+								</div>
+								<div class="control-group">
+									<div class="checkbox">
+										<label>
+											<input name="form-field-checkbox" type="checkbox" class="ace">
+											<span class="lbl"> Alcoholismo</span>
+										</label>
+									</div>
+
+									<div class="checkbox">
+										<label>
+											<input name="form-field-checkbox" type="checkbox" class="ace">
+											<span class="lbl"> Tabaquismo</span>
+										</label>
+									</div>
+
+									<div class="checkbox">
+										<label>
+											<input name="form-field-checkbox" type="checkbox" class="ace">
+											<span class="lbl"> Drogadiccion</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div><!-- row-->
+
+						<div class="space-6"></div>
+						<div class="row">
+							<div class="col-xs-12"> 
+								<h3 class="header smaller lighter">Observaciones</h3>	
+								<textarea class="form-control" id="form-field-12"></textarea>	
+							</div>
+						</div><!-- row-->
+
+						<div class="space-6"></div>
+						<div class="row">
+							<div class="col-xs-12">
+								<button class="btn btn-danger btn-block">Crear</button>
+							</div>
+						</div>
+						</form>
+
+							</div>
+						</div>
+
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Ace</span>
+							Application © 2013-2014
+						</span>
+
+						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<a href="#">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<script src='/angular/angular.js'></script>
+		<!--[if !IE]> -->
+		<script src="/js/jquery-2.1.4.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script><script src="/js/jquery.mobile.custom.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
+		<script src="/js/ace-elements.min.js"></script>
+		<script src="/js/ace.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+	
+
+</body></html>
