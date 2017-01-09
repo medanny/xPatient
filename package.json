@@ -10,8 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.0",
-    "angular-cli": "^1.0.0-beta.24",
-    "angular2": "^2.0.0-beta.21",
     "async": "^2.1.4",
     "autoless": "^0.1.7",
     "body-parser": "^1.15.2",
