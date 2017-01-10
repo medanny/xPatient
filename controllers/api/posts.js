@@ -30,4 +30,18 @@ router.post('/api/posts', function(req, res){
 	});
 });
 
+router.delete('/api/posts/:postId', function(req, res){
+	var id = req.params.postId;
+	console.log('deleting post with id: ' + id);
+
+	Post.remove({
+		_id: id
+	}, function(err){
+			if (err) {
+				res.send(err);
+			}
+			res.json({message: "Post deleted"});
+	});
+});
+
 module.exports = router;

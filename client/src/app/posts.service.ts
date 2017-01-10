@@ -16,7 +16,7 @@ export class PostsService {
   getPosts() {
   	return this._http.get('/api/posts')
   		.map((response: Response) => response.json())
-  		.do(data => console.log('All' + JSON.stringify(data)))
+  		.do(data => console.log('All' + JSON.stringify(data)));
   }
   
   createPost (posts) {
@@ -25,7 +25,13 @@ export class PostsService {
 
   	return this._http.post('/api/posts', JSON.stringify(posts), options)
   		.map((response: Response) => response.json())
-  		.do(data => console.log('All' + JSON.stringify(data)))
+  		.do(data => console.log('All' + JSON.stringify(data)));
+  }
+
+  deletePost (id) {
+    return this._http.delete('/api/posts/' + id)
+      .map((response: Response) => response.json())
+      .do(data => console.log('All' + JSON.stringify(data)));
   }
 
 }

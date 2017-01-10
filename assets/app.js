@@ -7,11 +7,13 @@ app.service('PostsSvc', function($http){
 	this.create = function (post) {
 		return $http.post('/api/posts', post);
 	}
+	this.delete = function (id){
+		return $http.delete('/api/posts/' + id);
+	}
 });
 
 app.controller('PostsCtrl', function($scope, PostsSvc){
 	$scope.addPost = function () {
-		debugger;
 		if($scope.postBody){
 			PostsSvc.create({
 				username: 'daniel',
@@ -21,12 +23,19 @@ app.controller('PostsCtrl', function($scope, PostsSvc){
 				$scope.postBody = null;
 			});
 		}
-	}
+	};
+
+	$scope.deletePost = function (id) {
+		if(id){
+			PostsSvc.delete(id).then(function (post){
+				PostsSvc.fetch().then(function (posts){
+					$scope.posts = posts.data;
+				});
+			});
+		}
+	};
 
 	PostsSvc.fetch().then(function (posts){
-		debugger;
 		$scope.posts = posts.data;
 	});
 });
-
-

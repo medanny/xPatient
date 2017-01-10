@@ -17,21 +17,41 @@ export class PostsComponent implements OnInit {
 	}
 
 	ngOnInit() {
-  		this._postsService.getPosts()
-  			.subscribe( posts => {
-                this.posts = posts;
-            },
-  			error => console.log(error));
-  	}
+		this.updatePosts();
+	}
   	
   	addPost() {
   		this._postsService.createPost({
   			username : 'daniel',
   			body : this.postBody
-  		}).subscribe( post => {
+  		}).subscribe( 
+			post => {
                 this.posts.unshift(post);
                 this.postBody = "";
             },
-  			error => console.log(error));
-  }
+  			error => {
+				console.log(error)
+			});
+	}
+
+	deletePost(id) {
+		this._postsService.deletePost(id).subscribe(
+			msg => {
+				console.log(msg);
+				this.updatePosts();
+			},
+		  	error => { 
+			  console.log(error)
+			});
+	}
+
+	updatePosts() {
+		this._postsService.getPosts().subscribe(
+			posts => {
+                this.posts = posts;
+            },
+  			error => {
+			  console.log(error)
+			});
+	}
 }

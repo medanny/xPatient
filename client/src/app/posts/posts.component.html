@@ -1,4 +1,5 @@
 <div class='container'>
+	<h1>Recent Posts (with Angular 2)</h1>
 	<form role='form'>
 				<div class="form-group">
 					<div class="input-group">
@@ -14,6 +15,7 @@
 		<li *ngFor='let post of posts' class='list-group-item'>
 			<strong>@{{post.username}}</strong>
 			<span>{{post.body}}</span>
+			<button (click)="deletePost(post._id)" class='btn btn-default'>DEL</button>
 		</li>
 	</ul>
 </div>
