@@ -9,6 +9,6 @@ var app = express();
 app.use(bodyParser.json());
 app.use(postsRouter);
 app.use(staticRouter);
-app.listen(3000, function(){
-	console.log('Server listening on', 3000);
+app.listen(3001, function(){
+	console.log('Server listening on', 3001);
 });

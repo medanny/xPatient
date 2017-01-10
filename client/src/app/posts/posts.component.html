@@ -1,0 +1,19 @@
+<div class='container'>
+	<form role='form'>
+				<div class="form-group">
+					<div class="input-group">
+						<input [(ngModel)]="postBody" name="postBody" type="text" class='form-control' />
+						<span class="input-group-btn">
+							<button (click)="addPost()" class='btn btn-default'>Add Post</button>
+						</span>
+					</div>
+				</div>
+	</form>
+	
+	<ul class='list-group'>
+		<li *ngFor='let post of posts' class='list-group-item'>
+			<strong>@{{post.username}}</strong>
+			<span>{{post.body}}</span>
+		</li>
+	</ul>
+</div>
